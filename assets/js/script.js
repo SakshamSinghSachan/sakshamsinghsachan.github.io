@@ -8,33 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- 1. Custom Cursor ---
-    const dot = document.getElementById('cursor-dot');
-    const outline = document.getElementById('cursor-outline');
-    
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-        
-        // Dot follows instantly
-        dot.style.left = `${posX}px`;
-        dot.style.top = `${posY}px`;
-        
-        // Outline follows with slight delay using GSAP
-        gsap.to(outline, {
-            x: posX,
-            y: posY,
-            duration: 0.15,
-            ease: "back.out(1.7)"
-        });
-        
-        // Center alignment fix for outline (since left/top aren't used for animation to improve perf)
-        if(outline.style.left === "") {
-             outline.style.left = `0px`;
-             outline.style.top = `0px`;
-        }
-    });
-
     // --- 2. Cinematic Loader ---
     const loader = document.getElementById('loader');
     const loaderText = document.getElementById('loader-text');
