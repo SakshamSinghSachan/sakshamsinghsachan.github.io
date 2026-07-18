@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Saksham Singh Sachan</title>
+    <meta name="description" content="Get in touch with Saksham Singh Sachan - GitHub, LinkedIn, Twitter, and Email.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (Play CDN for Static Hosting) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'space-black': '#050505',
+                        'space-blue': '#0A0F1A',
+                        'electric-cyan': '#00F0FF',
+                        'purple-nebula': '#9D00FF',
+                    },
+                    backgroundImage: {
+                        'cyber-grid': 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-space-black text-white min-h-screen flex flex-col font-sans relative overflow-x-hidden selection:bg-electric-cyan selection:text-black">
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 z-[-1] bg-cyber-grid bg-[size:50px_50px]"></div>
+
+    <main class="flex-1 w-full flex flex-col items-center justify-center relative z-10 px-6 py-24">
+
+        <a href="index.html" class="absolute top-8 left-6 md:left-12 text-gray-400 hover:text-electric-cyan transition-colors flex items-center gap-2 font-mono text-sm">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+        </a>
+
+        <div class="max-w-2xl w-full text-center">
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
+                Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-purple-nebula">Connect</span>
+            </h1>
+            <p class="text-gray-400 font-sans mb-12 text-lg">
+                Whether it's a security collaboration, a bug bounty tip, or just a hello — reach me here.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-5 text-left">
+
+                <!-- TODO: Replace with your actual GitHub URL -->
+                <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"
+                   class="glass-card p-6 rounded-lg border border-white/10 hover:border-electric-cyan transition-all hover:-translate-y-1 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-electric-cyan/10 transition-colors">
+                        <i data-lucide="github" class="w-6 h-6 text-electric-cyan"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">GitHub</div>
+                        <div class="text-gray-500 text-sm font-mono">@YOUR_GITHUB_USERNAME</div>
+                    </div>
+                </a>
+
+                <!-- TODO: Replace with your actual LinkedIn URL -->
+                <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank" rel="noopener"
+                   class="glass-card p-6 rounded-lg border border-white/10 hover:border-electric-cyan transition-all hover:-translate-y-1 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-electric-cyan/10 transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6 text-electric-cyan"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">LinkedIn</div>
+                        <div class="text-gray-500 text-sm font-mono">/in/YOUR_LINKEDIN_USERNAME</div>
+                    </div>
+                </a>
+
+                <!-- TODO: Replace with your actual Twitter/X URL -->
+                <a href="https://twitter.com/YOUR_TWITTER_HANDLE" target="_blank" rel="noopener"
+                   class="glass-card p-6 rounded-lg border border-white/10 hover:border-electric-cyan transition-all hover:-translate-y-1 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-electric-cyan/10 transition-colors">
+                        <i data-lucide="twitter" class="w-6 h-6 text-electric-cyan"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">Twitter / X</div>
+                        <div class="text-gray-500 text-sm font-mono">@YOUR_TWITTER_HANDLE</div>
+                    </div>
+                </a>
+
+                <!-- TODO: Replace with your actual email address -->
+                <a href="mailto:your.email@example.com"
+                   class="glass-card p-6 rounded-lg border border-white/10 hover:border-electric-cyan transition-all hover:-translate-y-1 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-electric-cyan/10 transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6 text-electric-cyan"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold">Email</div>
+                        <div class="text-gray-500 text-sm font-mono">your.email@example.com</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
