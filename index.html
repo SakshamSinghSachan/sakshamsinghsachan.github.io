@@ -48,10 +48,6 @@
     <!-- Background Grid -->
     <div class="fixed inset-0 z-[-1] bg-cyber-grid bg-[size:50px_50px]"></div>
 
-    <!-- Custom Cursor -->
-    <div id="cursor-dot" class="cursor-dot"></div>
-    <div id="cursor-outline" class="cursor-outline"></div>
-
     <!-- Cinematic Loader -->
     <div id="loader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-space-black font-mono text-electric-cyan transition-opacity duration-1000">
         <div class="w-64 max-w-full px-4">
@@ -91,13 +87,14 @@
                     </div>
 
                     <div class="flex flex-wrap gap-4 mt-8">
-                        <a href="#projects" class="px-6 py-3 bg-electric-cyan text-space-black font-bold uppercase tracking-wider rounded flex items-center gap-2 hover:scale-105 transition-transform">
+                        <!-- TODO: Replace YOUR_GITHUB_USERNAME with your actual GitHub username -->
+                        <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener" class="px-6 py-3 bg-electric-cyan text-space-black font-bold uppercase tracking-wider rounded flex items-center gap-2 hover:scale-105 transition-transform">
                             <i data-lucide="terminal" class="w-5 h-5"></i> View Projects
                         </a>
-                        <a href="#contact" class="px-6 py-3 bg-transparent border border-purple-nebula text-purple-nebula hover:bg-purple-nebula hover:text-white font-bold uppercase tracking-wider rounded transition-all hover:scale-105 flex items-center gap-2">
+                        <a href="contact.html" class="px-6 py-3 bg-transparent border border-purple-nebula text-purple-nebula hover:bg-purple-nebula hover:text-white font-bold uppercase tracking-wider rounded transition-all hover:scale-105 flex items-center gap-2">
                             <i data-lucide="mail" class="w-5 h-5"></i> Contact Me
                         </a>
-                        <a href="assets/resume.pdf" target="_blank" class="px-6 py-3 bg-transparent border border-white/20 hover:border-white/50 text-white font-bold uppercase tracking-wider rounded transition-all hover:scale-105 flex items-center gap-2">
+                        <a href="assets/resume/resume.pdf" target="_blank" class="px-6 py-3 bg-transparent border border-white/20 hover:border-white/50 text-white font-bold uppercase tracking-wider rounded transition-all hover:scale-105 flex items-center gap-2">
                             <i data-lucide="file-text" class="w-5 h-5"></i> Resume
                         </a>
                     </div>
@@ -201,43 +198,6 @@
                     <div class="flex-1 overflow-hidden flex flex-col justify-end text-green-400">
                         <div id="terminal-lines" class="flex flex-col"></div>
                         <div class="w-2 h-4 bg-white mt-1 animate-pulse"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Placeholder -->
-        <section id="projects" class="py-24 bg-space-black relative border-b border-white/5">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-black mb-12 text-center uppercase tracking-tighter">Featured <span class="text-electric-cyan">Projects</span></h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Placeholder Card -->
-                    <div class="glass-card p-6 rounded-lg border border-white/10 hover:border-electric-cyan transition-all hover:-translate-y-2 cursor-pointer group">
-                        <div class="h-40 bg-white/5 rounded flex items-center justify-center mb-4 text-white/20">
-                            <i data-lucide="shield" class="w-12 h-12"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Website Security Scanner</h3>
-                        <p class="text-gray-400 text-sm mb-4">Automated vulnerability scanner identifying common OWASP Top 10 issues.</p>
-                        <div class="flex gap-2 text-xs font-mono text-purple-nebula mb-4">
-                            <span>Python</span> <span>Bash</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-electric-cyan hover:text-white transition-colors flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
-                        </div>
-                    </div>
-                    <!-- Placeholder Card -->
-                    <div class="glass-card p-6 rounded-lg border border-white/10 hover:border-electric-cyan transition-all hover:-translate-y-2 cursor-pointer group">
-                        <div class="h-40 bg-white/5 rounded flex items-center justify-center mb-4 text-white/20">
-                            <i data-lucide="cpu" class="w-12 h-12"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">AI Resume Screening</h3>
-                        <p class="text-gray-400 text-sm mb-4">ML-powered system to match candidates with job descriptions accurately.</p>
-                        <div class="flex gap-2 text-xs font-mono text-purple-nebula mb-4">
-                            <span>TensorFlow</span> <span>React</span>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="#" class="text-electric-cyan hover:text-white transition-colors flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
-                        </div>
                     </div>
                 </div>
             </div>
