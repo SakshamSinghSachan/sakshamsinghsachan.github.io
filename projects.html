@@ -3,187 +3,910 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects by Saksham Singh Sachan.">
+
+  <meta
+    name="description"
+    content="Projects by Saksham Singh Sachan — cybersecurity, software, systems, AI and aerospace projects."
+  >
+
   <title>Projects | Saksham Singh Sachan</title>
+
   <style>
-    :root{
-      --bg:#07090d;
-      --panel:#0d1118;
-      --panel2:#111722;
-      --text:#f3f5f7;
-      --muted:#9da7b5;
-      --line:rgba(255,255,255,.09);
-      --accent:#d9b76c;
-      --accent2:#f0d795;
-      --max:1180px;
+    :root {
+      --bg: #07090d;
+      --panel: #0d1118;
+      --panel2: #111722;
+
+      --text: #f3f5f7;
+      --muted: #9da7b5;
+
+      --line: rgba(255, 255, 255, 0.09);
+
+      --accent: #d9b76c;
+      --accent2: #f0d795;
+
+      --max: 1180px;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
       background:
-        radial-gradient(circle at 85% 10%,rgba(217,183,108,.10),transparent 28%),
-        radial-gradient(circle at 10% 55%,rgba(92,116,150,.08),transparent 30%),
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(217, 183, 108, 0.10),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 10% 55%,
+          rgba(92, 116, 150, 0.08),
+          transparent 30%
+        ),
         var(--bg);
-      color:var(--text);line-height:1.6;
+
+      color: var(--text);
+      line-height: 1.6;
     }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max),92%);margin:auto}
-    nav{
-      position:fixed;top:0;left:0;right:0;z-index:10;
-      backdrop-filter:blur(18px);
-      background:rgba(7,9,13,.72);
-      border-bottom:1px solid var(--line);
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
-    .brand{font-family:Georgia,serif;font-size:22px;letter-spacing:.08em}
-    .brand span{color:var(--accent)}
-    .nav-links{display:flex;gap:30px;color:var(--muted);font-size:14px}
-    .nav-links a:hover{color:var(--accent2)}
-    .back{color:var(--accent2);font-size:13px}
-    main{padding:155px 0 100px}
-    .eyebrow{color:var(--accent);text-transform:uppercase;letter-spacing:.22em;font-size:12px;margin-bottom:18px}
-    h1{
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(55px,8vw,100px);
-      line-height:.94;font-weight:500;letter-spacing:-.045em;
+
+    .container {
+      width: min(var(--max), 92%);
+      margin: auto;
     }
-    h1 em{font-style:italic;color:var(--accent)}
-    .intro{max-width:720px;color:var(--muted);font-size:18px;margin-top:28px}
-    .count-row{
-      display:flex;align-items:end;gap:20px;margin:65px 0 35px;
-      border-top:1px solid var(--line);padding-top:25px;
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 100;
+
+      backdrop-filter: blur(18px);
+
+      background: rgba(7, 9, 13, 0.72);
+
+      border-bottom: 1px solid var(--line);
     }
-    .count{font-family:Georgia,serif;font-size:65px;line-height:1;color:var(--accent)}
-    .count-label{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.16em}
-    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .project-card{
-      position:relative;overflow:hidden;background:linear-gradient(145deg,var(--panel),var(--panel2));
-      border:1px solid var(--line);padding:32px;min-height:310px;transition:.3s;
+
+    .nav-inner {
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .project-card:hover{transform:translateY(-5px);border-color:rgba(217,183,108,.42)}
-    .project-number{font-size:12px;color:var(--accent);letter-spacing:.15em;margin-bottom:55px}
-    .project-card h2{font-family:Georgia,serif;font-size:29px;font-weight:500;margin-bottom:12px}
-    .project-card p{color:var(--muted);font-size:14px;max-width:560px}
-    .project-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-    .project-tag{font-size:11px;color:#aeb7c4;border:1px solid var(--line);padding:6px 9px}
-    .project-link{display:inline-block;margin-top:25px;color:var(--accent2);font-size:13px}
-    .project-link:hover{text-decoration:underline}
-    footer{padding:35px 0;color:#707987;font-size:13px;border-top:1px solid var(--line)}
-    @media(max-width:800px){
-      .nav-links{display:none}
-      .project-grid{grid-template-columns:1fr}
-      main{padding-top:125px}
+
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 22px;
+
+      letter-spacing: 0.08em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+
+      gap: 30px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent2);
+    }
+
+    .back {
+      color: var(--accent2);
+
+      font-size: 13px;
+
+      transition: 0.25s ease;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    /* =========================
+       MAIN HEADER
+    ========================= */
+
+    main {
+      padding: 155px 0 100px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.22em;
+
+      font-size: 12px;
+
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: clamp(55px, 8vw, 100px);
+
+      line-height: 0.94;
+
+      font-weight: 500;
+
+      letter-spacing: -0.045em;
+    }
+
+    h1 em {
+      font-style: italic;
+
+      color: var(--accent);
+    }
+
+    .intro {
+      max-width: 720px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+
+      margin-top: 28px;
+    }
+
+    /* =========================
+       PROJECT COUNT
+    ========================= */
+
+    .count-row {
+      display: flex;
+
+      align-items: flex-end;
+
+      gap: 20px;
+
+      margin: 65px 0 35px;
+
+      border-top: 1px solid var(--line);
+
+      padding-top: 25px;
+    }
+
+    .count {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 65px;
+
+      line-height: 1;
+
+      color: var(--accent);
+    }
+
+    .count-label {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.16em;
+    }
+
+    /* =========================
+       PROJECT GRID
+    ========================= */
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    /* =========================
+       PROJECT CARD
+    ========================= */
+
+    .project-card {
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--panel),
+          var(--panel2)
+        );
+
+      border: 1px solid var(--line);
+
+      padding: 32px;
+
+      min-height: 330px;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+
+      border-color: rgba(217, 183, 108, 0.42);
+
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-number {
+      font-size: 12px;
+
+      color: var(--accent);
+
+      letter-spacing: 0.15em;
+
+      margin-bottom: 55px;
+    }
+
+    .project-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+
+      font-size: 30px;
+
+      font-weight: 500;
+
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+
+      max-width: 560px;
+    }
+
+    /* =========================
+       PROJECT TAGS
+    ========================= */
+
+    .project-tags {
+      display: flex;
+
+      gap: 8px;
+
+      flex-wrap: wrap;
+
+      margin-top: 22px;
+    }
+
+    .project-tag {
+      font-size: 11px;
+
+      color: #aeb7c4;
+
+      border: 1px solid var(--line);
+
+      padding: 6px 9px;
+    }
+
+    /* =========================
+       PROJECT BUTTONS
+    ========================= */
+
+    .project-actions {
+      display: flex;
+
+      gap: 12px;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      margin-top: 25px;
+    }
+
+    .project-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 38px;
+
+      padding: 8px 15px;
+
+      font-size: 13px;
+
+      color: var(--accent2);
+
+      border: 1px solid var(--line);
+
+      transition: 0.25s ease;
+    }
+
+    .project-link:hover {
+      border-color: var(--accent);
+
+      transform: translateY(-2px);
+    }
+
+    .github-link {
+      background: rgba(255, 255, 255, 0.025);
+
+      color: white;
+    }
+
+    .github-link:hover {
+      background: rgba(217, 183, 108, 0.08);
+
+      color: var(--accent2);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 35px 0;
+
+      color: #707987;
+
+      font-size: 13px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      main {
+        padding-top: 125px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+
+      .count {
+        font-size: 55px;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .nav-inner {
+        height: 68px;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+
+      .intro {
+        font-size: 16px;
+      }
+
+      .project-card {
+        padding: 25px;
+      }
+
+      .project-number {
+        margin-bottom: 40px;
+      }
+
     }
   </style>
 </head>
+
+
 <body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
   <nav>
+
     <div class="container nav-inner">
-      <a class="brand" href="index.html">S<span>.</span>S.</a>
+
+      <a class="brand" href="index.html">
+        S<span>.S<span>.</span>S.
+      </a>
+
       <div class="nav-links">
-        <a href="index.html#about">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="index.html#resume">Resume</a>
-        <a href="index.html#contact">Socials</a>
+
+        <a href="index.html#about">
+          About
+        </a>
+
+        <a href="projects.html">
+          Projects
+        </a>
+
+        <a href="index.html#resume">
+          Resume
+        </a>
+
+        <a href="index.html#contact">
+          Socials
+        </a>
+
       </div>
-      <a class="back" href="index.html">← Home</a>
+
+      <a class="back" href="index.html">
+        ← Home
+      </a>
+
     </div>
+
   </nav>
 
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
   <main>
+
     <div class="container">
-      <div class="eyebrow">Selected Work · Experiments · Builds</div>
-      <h1>My <em>Projects</em></h1>
+
+      <div class="eyebrow">
+        Selected Work · Experiments · Builds
+      </div>
+
+      <h1>
+        My <em>Projects</em>
+      </h1>
+
       <p class="intro">
-        A dedicated collection of the projects I have built, explored and experimented with.
-        I will continue adding new work here as I learn and create.
+        A collection of the projects I have built, explored and experimented with.
+        I will continue adding new work here as I learn, build and develop new ideas.
       </p>
 
+
+      <!-- =========================
+           PROJECT COUNT
+      ========================= -->
+
       <div class="count-row">
-        <div class="count">06</div>
-        <div class="count-label">Projects<br>Currently Listed</div>
+
+        <div class="count">
+          06
+        </div>
+
+        <div class="count-label">
+          Projects<br>
+          Currently Listed
+        </div>
+
       </div>
+
+
+      <!-- =========================
+           PROJECTS
+      ========================= -->
 
       <div class="project-grid">
 
-        <article class="project-card">
-          <div class="project-number">PROJECT 01</div>
-          <h2>SSOS</h2>
-          <p>My operating-system project exploring low-level computing, system architecture and how software interacts with hardware.</p>
-          <div class="project-tags">
-            <span class="project-tag">Operating Systems</span>
-            <span class="project-tag">Low Level</span>
-            <span class="project-tag">Systems</span>
-          </div>
-          <a class="project-link" href="#">View Project ↗</a>
-        </article>
+
+        <!-- PROJECT 01 -->
 
         <article class="project-card">
-          <div class="project-number">PROJECT 02</div>
-          <h2>Security Scanner</h2>
-          <p>A Python-based website security scanning project created to explore reconnaissance, HTTP behaviour and common web-security checks.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Cybersecurity</span>
-            <span class="project-tag">Web Security</span>
+
+          <div class="project-number">
+            PROJECT 01
           </div>
-          <a class="project-link" href="#">View Project ↗</a>
+
+          <h2>
+            SSOS
+          </h2>
+
+          <p>
+            My operating-system project exploring low-level computing,
+            system architecture and how software interacts with hardware.
+          </p>
+
+          <div class="project-tags">
+
+            <span class="project-tag">
+              Operating Systems
+            </span>
+
+            <span class="project-tag">
+              Low Level
+            </span>
+
+            <span class="project-tag">
+              Systems
+            </span>
+
+          </div>
+
+          <div class="project-actions">
+
+              <a
+              class="project-link github-link"
+              href="https://github.com/SakshamSinghSachan/ssOS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <!-- CHANGE THIS TO YOUR PROJECT DETAILS PAGE -->
+
+            <a
+              class="project-link"
+              href="#"
+            >
+              Details ↗
+            </a>
+
+          </div>
+
         </article>
 
-        <article class="project-card">
-          <div class="project-number">PROJECT 03</div>
-          <h2>SSSWriteups</h2>
-          <p>A cybersecurity writeup platform for documenting CTFs, PortSwigger labs, tools, research and practical security learning.</p>
-          <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
-            <span class="project-tag">GitHub Pages</span>
-          </div>
-          <a class="project-link" href="#">View Project ↗</a>
-        </article>
+
+
+        <!-- PROJECT 02 -->
 
         <article class="project-card">
-          <div class="project-number">PROJECT 04</div>
-          <h2>AI Resume Shortlisting</h2>
-          <p>An AI-powered resume shortlisting concept designed to help evaluate candidates and automate parts of the recruitment workflow.</p>
-          <div class="project-tags">
-            <span class="project-tag">AI</span>
-            <span class="project-tag">Web App</span>
-            <span class="project-tag">SaaS</span>
+
+          <div class="project-number">
+            PROJECT 02
           </div>
-          <a class="project-link" href="#">View Project ↗</a>
+
+          <h2>
+            Security Scanner
+          </h2>
+
+          <p>
+            A Python-based website security scanning project created
+            to explore reconnaissance, HTTP behaviour and common
+            web-security checks.
+          </p>
+
+          <div class="project-tags">
+
+            <span class="project-tag">
+              Python
+            </span>
+
+            <span class="project-tag">
+              Cybersecurity
+            </span>
+
+            <span class="project-tag">
+              Web Security
+            </span>
+
+          </div>
+
+          <div class="project-actions">
+
+            <a
+              class="project-link github-link"
+              href="https://github.com/SakshamSinghSachan/website-security-scanner"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              class="project-link"
+              href="#"
+            >
+              Details ↗
+            </a>
+
+          </div>
+
         </article>
 
-        <article class="project-card">
-          <div class="project-number">PROJECT 05</div>
-          <h2>Rocket Landing Simulator</h2>
-          <p>An aerospace-focused simulation project exploring rocket landing behaviour, control logic and precision descent.</p>
-          <div class="project-tags">
-            <span class="project-tag">Simulation</span>
-            <span class="project-tag">Aerospace</span>
-            <span class="project-tag">Physics</span>
-          </div>
-          <a class="project-link" href="#">View Project ↗</a>
-        </article>
+
+
+        <!-- PROJECT 03 -->
 
         <article class="project-card">
-          <div class="project-number">PROJECT 06</div>
-          <h2>More Coming Soon</h2>
-          <p>This portfolio is designed to grow with me. New projects can be added as I build, learn and experiment.</p>
-          <div class="project-tags">
-            <span class="project-tag">Future Work</span>
-            <span class="project-tag">Experiments</span>
+
+          <div class="project-number">
+            PROJECT 03
           </div>
-          <a class="project-link" href="#">Add Project ↗</a>
+
+          <h2>
+            SSSWriteups
+          </h2>
+
+          <p>
+            A cybersecurity writeup platform for documenting CTFs,
+            PortSwigger labs, tools, research and practical security learning.
+          </p>
+
+          <div class="project-tags">
+
+            <span class="project-tag">
+              HTML
+            </span>
+
+            <span class="project-tag">
+              CSS
+            </span>
+
+            <span class="project-tag">
+              GitHub Pages
+            </span>
+
+          </div>
+
+          <div class="project-actions">
+
+            <a
+              class="project-link github-link"
+              href="https://github.com/SakshamSinghSachan/SSSWriteups"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              class="project-link"
+              href="#"
+            >
+              Details ↗
+            </a>
+
+          </div>
+
         </article>
+
+
+
+        <!-- PROJECT 04 -->
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <h2>
+            AI Resume Shortlisting
+          </h2>
+
+          <p>
+            An AI-powered resume shortlisting concept designed to
+            help evaluate candidates and automate parts of the
+            recruitment workflow.
+          </p>
+
+          <div class="project-tags">
+
+            <span class="project-tag">
+              AI
+            </span>
+
+            <span class="project-tag">
+              Web App
+            </span>
+
+            <span class="project-tag">
+              SaaS
+            </span>
+
+          </div>
+
+          <div class="project-actions">
+
+            <a
+              class="project-link github-link"
+              href="https://github.com/SakshamSinghSachan/cv-bouncer-ai-05"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              class="project-link"
+              href="#"
+            >
+              Details ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 05 -->
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 05
+          </div>
+
+          <h2>
+            Rocket Landing Simulator
+          </h2>
+
+          <p>
+            An aerospace-focused simulation project exploring
+            rocket landing behaviour, control logic and
+            precision descent.
+          </p>
+
+          <div class="project-tags">
+
+            <span class="project-tag">
+              Simulation
+            </span>
+
+            <span class="project-tag">
+              Aerospace
+            </span>
+
+            <span class="project-tag">
+              Physics
+            </span>
+
+          </div>
+
+          <div class="project-actions">
+
+            <a
+              class="project-link github-link"
+              href="https://github.com/SakshamSinghSachan/rocket_landing_software"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              class="project-link"
+              href="#"
+            >
+              Details ↗
+            </a>
+
+          </div>
+
+        </article>
+
+        <!-- PROJECT 06 -->
+
+        <article class="project-card">
+
+          <div class="project-number">
+            PROJECT 06
+          </div>
+
+          <h2>
+            Snake Game
+          </h2>
+
+          <p>
+           A snake game 
+          </p>
+
+          <div class="project-tags">
+
+            <span class="project-tag">
+              HTML
+            </span>
+
+            <span class="project-tag">
+              CSS
+            </span>
+
+            <span class="project-tag">
+              GitHub Pages
+            </span>
+
+          </div>
+
+          <div class="project-actions">
+
+            <a
+              class="project-link github-link"
+              href="https://github.com/SakshamSinghSachan/Snake-Game"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              class="project-link"
+              href="#"
+            >
+              Details ↗
+            </a>
+
+          </div>
+
+        </article>
+
 
       </div>
+
     </div>
+
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
-    <div class="container">© 2026 Saksham Singh Sachan · Built with HTML & CSS.</div>
+
+    <div class="container">
+
+      © 2026 Saksham Singh Sachan 
+    </div>
+
   </footer>
+
+
 </body>
 </html>
